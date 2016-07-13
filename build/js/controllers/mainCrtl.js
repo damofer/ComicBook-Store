@@ -1,0 +1,1 @@
+"use strict";app.controller("homeCtrl",["$scope",function(t){t.txt="page home"}]);

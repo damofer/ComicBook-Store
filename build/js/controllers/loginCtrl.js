@@ -1,0 +1,1 @@
+"use strict";app.controller("loginCtrl",function(n,t){n.msgtxt="",n.login=function(o){t.login(o,n)}});

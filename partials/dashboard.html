@@ -1,0 +1,147 @@
+<!-- <div class="wrap">
+	<p>{{txt}}</p>
+	<a href="" ng-click="logout()">Logout</a>
+</div>
+
+ -->
+ <div  class="nav animated fadeInDown" >
+
+	<ul class="nav__menu__list">
+		<li class="nav__menu__item"><a href="">Administrar Comics</a></li>
+		<li class="nav__menu__item"><a href="#/dashboard/registration">Registrar usuario</a></li>
+		<li class="nav__menu__item logout"><a href="" ng-click="logout()">
+		Cerrar Session</a></li>
+		 <li class="menu__icon">
+   			 <a href="" ng-click="toggle()">&#9776;</a>
+  		</li>
+
+	</ul>
+
+</div>
+
+
+<div class="dashboard__panel__header animated fadeInUp">
+		<button class="dashboard__panel__button" ng-click="addNewComic()">Agregar Comic</button>
+		<button class="dashboard__panel__button" ng-click="limit=limit+9">Mostrar mas</button>
+</div>
+ <div class="dashboard__panel animated fadeInUp">
+ 	<li class="dashboard__panel__item animated fadeInUp"ng-repeat="comic in comics | orderBy :'year' | limitTo:limit">
+			<img ng-click ="readComic(comic)" src='{{comic.img}}' alt="" width="120px" height="180px">
+			<h3>{{comic.name}} - {{comic.year}} </h3>
+			<h5>
+			<a href=""ng-click="editComic(comic)"><b style="color:green;">Editar</b></a>
+			<a href=""ng-click="deleteComic(comic)"><b style="color:red;">Borrar</b></a></h5>
+
+	</li>
+ </div>
+
+ <div id="comicModal__edit" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <div class="modal-header">
+      <span ng-click="closeModal()" class="close">×</span>
+      <h2>{{current.name}} - {{current.year}}</h2>
+    </div>
+    <div class="modal-body">
+    	<form>
+		  <fieldset>
+		    <legend>Información:</legend><br>
+		    <div class="form__content">
+			    <h3 class="form__label">Nombre</h3>
+			    <input type="text" class="form__texbox" ng-model ="current.name"value="{{current.name}}">
+			    <br>
+			    <h3 class="form__label">Año</h3>
+			    <input type="text" class="form__texbox" ng-model ="current.year"value="{{current.year}}">
+			    <br>
+			    <h3 class="form__label">url imagen</h3>
+			    <input type="text"  class="form__texbox" ng-model ="current.img"value="{{current.img}}">
+			    <br>
+			</div>
+
+		  </fieldset>
+		</form>
+
+    </div>
+    <div class="modal-footer">
+		<button class="dashboard__modal__button" ng-click="saveComic()">Guardar</button>
+		<button class="dashboard__modal__button" ng-click="deleteComic(current)">Borrar</button>
+    </div>
+  </div>
+
+</div>
+
+ <div id="comicModal__create" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <div class="modal-header">
+      <span ng-click="closeModal()" class="close">×</span>
+
+    </div>
+    <div class="modal-body">
+    	<form>
+		  <fieldset>
+		    <legend>Información:</legend><br>
+		   <div class="form__content">
+			    <h3 class="form__label">Nombre</h3>
+			    <input type="text" class="form__texbox" ng-model ="current.name"value="{{current.name}}">
+			    <br>
+			    <h3 class="form__label">Año</h3>
+			    <input type="text" class="form__texbox" ng-model ="current.year"value="{{current.year}}">
+			    <br>
+			    <h3 class="form__label">url imagen</h3>
+			    <input type="text"  class="form__texbox" ng-model ="current.img"value="{{current.img}}">
+			    <br>
+			</div>
+
+
+		  </fieldset>
+		</form>
+
+    </div>
+    <div class="modal-footer">
+		<button class="dashboard__modal__button" ng-click="saveNewComic(current)">Guardar</button>
+		<button class="dashboard__modal__button" ng-click="closeModal()">Cancelar</button>
+
+    </div>
+  </div>
+
+</div>
+<div id="comicModal__read" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <div class="modal-header">
+      <span ng-click="closeModal()" class="close">×</span>
+
+    </div>
+    <div class="modal-body">
+    	<form>
+		  <fieldset>
+		    <legend>Información:</legend><br>
+		    <div class="comic__description">
+			    <div class="comic__description__img">
+				<img src="{{current.img}}" alt="">
+				</div>
+			    <div class="comic__description__text">
+			    Nombre: {{current.name}}
+
+			    <br>
+			    Año: {{current.year}}
+
+			    <br>
+				url Imagen: {{current.img}}
+			    <br>
+			</div>
+			</div>
+
+
+		  </fieldset>
+		</form>
+
+    </div>
+
+  </div>
+
+</div>

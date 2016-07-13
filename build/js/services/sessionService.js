@@ -1,0 +1,1 @@
+"use sctrict";app.factory("sessionService",["$http",function(t){return{set:function(t,e){return sessionStorage.setItem(t,e)},get:function(t){return sessionStorage.getItem(t)},destroy:function(e){return t.post("data/destroy_session.php"),sessionStorage.removeItem(e)}}}]);

@@ -1,0 +1,215 @@
+.dashboard__panel{
+
+	@include center();
+	width: 90%;
+	min-height: 400px;
+	max-height:600px;
+	overflow: scroll;
+	overflow-x:hidden;
+	 @include grad($gradCol1,$gradCol2);
+
+	@media #{$mobile}{
+	@include center();
+
+
+
+	overflow: auto;
+	}
+
+
+}
+::-webkit-scrollbar {
+    width: 0px;  /* remove scrollbar space */
+    background: transparent;  /* optional: just make scrollbar invisible */
+}
+
+
+
+.dashboard__panel__header{
+
+
+	height: 4em;
+	@include center()
+	width: 90%;
+	 @include grad($gradCol1,$gradCol1);
+	@media #{$mobile}{
+	width: 100%;
+	}
+}
+
+.dashboard__panel__button{
+	background:transparent;
+	 color:white;
+	font-family:$main-font;
+	letter-spacing: 2px;
+	@include roundBorders()
+    border-width: 1px;
+	padding: 1em;
+	margin-top: 1em;
+	margin-left: 1em;
+	&:hover{
+		background: $gradCol1;
+	}
+
+}
+
+.dashboard__modal__button{
+	@extend .dashboard__panel__button;
+	background: $gradCol1;
+	margin-bottom: 1em;
+	&:hover{
+			background: $gradCol2;
+		}
+}
+.dashboard__panel__item{
+
+	color: white;
+	display:inline-block;
+	margin: 1em 2em;
+	text-align:center;
+	font-family:$main-font;
+	letter-spacing: 2px;
+
+	@media #{$mobile}{
+
+	@include center();
+
+	}
+	@media #{$tablet}{
+	@include center();
+	width: 33%;
+	}
+}
+.comic__description{
+	position:relative;
+	@include center();
+}
+.comic__description__text{
+
+	position: relative;
+	top:0;
+	margin: auto;
+	float: right;
+
+	@media #{$mobile}{
+			clear: both;
+			@include center();
+			text-align:center;
+			margin: 1em auto;
+		}
+}
+.comic__description__img{
+	position:relative;
+	float:left;
+	top:0;
+		@media #{$mobile}{
+			clear: both;
+			@include center();
+			text-align:center;
+	}
+}
+
+.form__content{
+text-align:center;
+margin: 1em;
+
+}
+.form__texbox
+{
+	position: relative;
+
+
+}
+.form__label
+{
+	position: relative;
+
+
+}
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+
+	@media #{$mobile}{
+	width: 100%;
+	}
+}
+.modal-body{
+	color:white;
+	font-family: $main-font;
+	letter-spacing: 2.5px;
+}
+/* Modal Content */
+.modal-content {
+    position: relative;
+    background: $gradCol2;
+    margin: auto;
+    padding: 0;
+    border: 1px solid #888;
+    width: 500px;
+    @media #{$mobile}{
+	width: 80%;
+
+	}
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s
+
+
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+}
+
+/* The Close Button */
+.close {
+    color: white;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-header {
+    padding: 2px 16px;
+    font-family: $main-font;
+    letter-spacing: 3px;
+     @include grad($gradCol1,$gradCol1);
+    color: white;
+}
+
+.modal-body {padding: 2px 16px;
+
+}
+
+.modal-footer {
+    padding: 2px 16px;
+     @include grad($gradCol1,$gradCol1);
+    color: white;
+}

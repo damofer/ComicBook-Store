@@ -1,0 +1,98 @@
+.nav{
+	width: 100%;
+	height: auto;
+	display: inline-block;
+	font-color: $nav-text-color;
+    @include grad($gradCol1,$gradCol2);
+    @media #{$mobile}{
+
+    }
+
+
+}
+// .nav__logo{
+// 	margin-left: 1em;
+// 	float:left;
+// 	@media #{$mobile}{
+
+
+// 	}
+
+// }
+
+
+
+.nav__menu__list{
+	 margin: 0;
+	 list-style-type: none;
+
+    padding: 0;
+    overflow: hidden;
+
+}
+.nav__menu__item{
+
+	color: white;
+	font-family:$main-font;
+	letter-spacing: 3px;
+	display: inline-block;
+
+	a{
+		display: inline-block;
+	    color: #f2f2f2;
+	    text-align: center;
+	    padding: 14px 16px;
+	    text-decoration: none;
+	    transition: 0.3s;
+	    font-size: 17px;
+	    &:hover{
+	    	background-color: #111;
+	    }
+
+	 }
+	 @media #{$mobile}{
+	 	&:not(:first-child) {display: none;}
+	 }
+
+}
+.menu__icon{
+	display:none;
+
+	@media #{$mobile}{
+		position: relative;
+	float: right;
+	right: 5%;
+    display: inline-block;
+    a{font-size: 35px;
+		text-decoration:none;
+		color:white;
+    }
+	}
+}
+.logout{
+
+	a{color: red; }
+}
+
+.responsive{
+	@media #{$mobile}{
+		position: relative;
+
+		.menu__icon{
+			position: absolute;
+		    right: 5%;
+		    top: 0;
+
+		}
+
+		.nav__menu__item{
+			 float: none;
+    		 display: inline;
+    		 a{
+    		 	display: block;
+    			text-align: left;
+    		 }
+		}
+	}
+
+}

@@ -1,0 +1,31 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+
+html,body{
+
+	 margin:0; /* remove default margin */
+     padding:0; /* remove default padding */
+     width:100%; /* take full browser width */
+     height:100%; /* take full browser height*/
+	overflow:scroll;
+ }
+
+
+body{
+
+
+ @include grad($gradCol2,$gradCol1);
+
+
+}
+ul{
+	list-style-type: none;
+}
+
+a{
+	text-decoration: none;
+}
+
